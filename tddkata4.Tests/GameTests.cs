@@ -5,15 +5,11 @@ namespace tddkata4.Tests
     [TestFixture]
     public class GameTests
     {
-        [Test]
-        public void RockBeatsScissors()
+        [TestCase(PlayerSelection.Rock, PlayerSelection.Scissors)]
+        [TestCase(PlayerSelection.Scissors, PlayerSelection.Paper)]
+        public void PlayerOneCanWin(PlayerSelection playerOne, PlayerSelection playerTwo)
         {
-            Assert.That(Round.Winner(PlayerSelection.Rock, PlayerSelection.Scissors), Is.EqualTo(Player.PlayerOne));
-        }
-        [Test]
-        public void ScissorsBeatsPaper()
-        {
-            Assert.That(Round.Winner(PlayerSelection.Scissors, PlayerSelection.Paper), Is.EqualTo(Player.PlayerOne));
+            Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(Player.PlayerOne));
         }
     }
 }
