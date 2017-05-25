@@ -19,7 +19,7 @@ namespace tddkata4.Tests
         [TestCase(PlayerSelection.Rock)]
         [TestCase(PlayerSelection.Scissors)]
         [TestCase(PlayerSelection.Paper)]
-        public void PlayersCanDrawWithTwoRocks(PlayerSelection playerSelection)
+        public void PlayersCanDraw(PlayerSelection playerSelection)
         {
             Assert.That(Round.Winner(playerSelection, playerSelection), Is.EqualTo(Winner.Draw));
         }
