@@ -16,6 +16,10 @@
             {
                 return tddkata4.Winner.PlayerTwo;
             }
+            if (playerOne == PlayerSelection.Rock && playerTwo == PlayerSelection.Rock)
+            {
+                return tddkata4.Winner.Draw;
+            }
             return tddkata4.Winner.PlayerOne;
         }
     }

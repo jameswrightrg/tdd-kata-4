@@ -4,5 +4,6 @@
     {
         PlayerOne,
         PlayerTwo,
+        Draw
     }
 }

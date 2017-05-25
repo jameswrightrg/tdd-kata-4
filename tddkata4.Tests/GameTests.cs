@@ -15,5 +15,11 @@ namespace tddkata4.Tests
         {
             Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(winner));
         }
+
+        [Test]
+        public void PlayersCanDraw()
+        {
+            Assert.That(Round.Winner(PlayerSelection.Rock, PlayerSelection.Rock), Is.EqualTo(Winner.Draw));
+        }
     }
 }
