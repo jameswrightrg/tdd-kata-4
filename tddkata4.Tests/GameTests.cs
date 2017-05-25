@@ -13,10 +13,12 @@ namespace tddkata4.Tests
             Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(Player.PlayerOne));
         }
 
-        [Test]
-        public void PlayerOneCanLose()
+        [TestCase(PlayerSelection.Scissors, PlayerSelection.Rock)]
+        [TestCase(PlayerSelection.Paper, PlayerSelection.Scissors)]
+        [TestCase(PlayerSelection.Rock, PlayerSelection.Paper)]
+        public void PlayerOneCanLoseScissorsAgainstRock(PlayerSelection playerOne, PlayerSelection playerTwo)
         {
-            Assert.That(Round.Winner(PlayerSelection.Scissors, PlayerSelection.Rock), Is.EqualTo(Player.PlayerTwo));
+            Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(Player.PlayerTwo));
         }
     }
 }
