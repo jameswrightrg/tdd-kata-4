@@ -3,7 +3,7 @@
 namespace tddkata4.Tests
 {
     [TestFixture]
-    public class GameTests
+    public class RoundTests
     {
         [TestCase(PlayerSelection.Rock, PlayerSelection.Scissors, Winner.PlayerOne)]
         [TestCase(PlayerSelection.Scissors, PlayerSelection.Paper, Winner.PlayerOne)]
