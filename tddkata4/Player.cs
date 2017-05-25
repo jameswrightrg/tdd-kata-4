@@ -2,6 +2,7 @@
 {
     public enum Player
     {
-        PlayerOne
+        PlayerOne,
+        PlayerTwo
     }
 }
