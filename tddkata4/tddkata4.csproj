@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="Game.cs" />
     <Compile Include="Winner.cs" />
     <Compile Include="PlayerSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
