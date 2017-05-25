@@ -66,5 +66,20 @@ namespace tddkata4.Tests
             Assert.That(game.Winner, Is.EqualTo(GameWinner.PlayerOne));
         }
 
+        [Test]
+        public void PlayerTwoWinsAfterTieBreaker()
+        {
+            var playerTwo = new EnumerablePlayer(new[] { PlayerSelection.Rock, PlayerSelection.Rock, PlayerSelection.Rock, PlayerSelection.Paper });
+            var playerOne = new Player(PlayerSelection.Rock);
+
+            var game = new Game(playerOne, playerTwo);
+
+            game.PlayRound();
+            game.PlayRound();
+            game.PlayRound();
+            game.PlayRound();
+
+            Assert.That(game.Winner, Is.EqualTo(GameWinner.PlayerTwo));
+        }
     }
 }

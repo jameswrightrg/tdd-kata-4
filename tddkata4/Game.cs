@@ -45,6 +45,10 @@
                     {
                         return GameWinner.PlayerOne;
                     }
+                    if (m_PlayerTwoWins > m_PlayerOneWins)
+                    {
+                        return GameWinner.PlayerTwo;
+                    }
                 }
                 return GameWinner.None;
             }
