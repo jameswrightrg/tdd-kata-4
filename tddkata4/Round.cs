@@ -20,6 +20,14 @@
             {
                 return tddkata4.Winner.Draw;
             }
+            if (playerOne == PlayerSelection.Scissors && playerTwo == PlayerSelection.Scissors)
+            {
+                return tddkata4.Winner.Draw;
+            }
+            if (playerOne == PlayerSelection.Paper && playerTwo == PlayerSelection.Paper)
+            {
+                return tddkata4.Winner.Draw;
+            }
             return tddkata4.Winner.PlayerOne;
         }
     }
