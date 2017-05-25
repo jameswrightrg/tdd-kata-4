@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Text;
 using NUnit.Framework;
 
@@ -31,6 +32,21 @@ namespace tddkata4.Tests
             {
                 game.PlayRound();
             }
+
+            Assert.That(game.Winner, Is.EqualTo(GameWinner.None));
+        }
+
+        [Test]
+        public void NoOneWinsAfterThreeRounds()
+        {
+            var playerOne = new Player(PlayerSelection.Rock);
+            var playerTwo = new Player(PlayerSelection.Rock);
+
+            var game = new Game(playerOne, playerTwo);
+
+            game.PlayRound();
+            game.PlayRound();
+            game.PlayRound();
 
             Assert.That(game.Winner, Is.EqualTo(GameWinner.None));
         }
