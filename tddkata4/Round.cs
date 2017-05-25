@@ -2,21 +2,21 @@
 {
     public class Round
     {
-        public static Player Winner(PlayerSelection playerOne, PlayerSelection playerTwo)
+        public static Winner Winner(PlayerSelection playerOne, PlayerSelection playerTwo)
         {
             if (playerOne == PlayerSelection.Scissors && playerTwo == PlayerSelection.Rock)
             {
-                return Player.PlayerTwo;
+                return tddkata4.Winner.PlayerTwo;
             }
             if (playerOne == PlayerSelection.Paper && playerTwo == PlayerSelection.Scissors)
             {
-                return Player.PlayerTwo;
+                return tddkata4.Winner.PlayerTwo;
             }
             if (playerOne == PlayerSelection.Rock && playerTwo == PlayerSelection.Paper)
             {
-                return Player.PlayerTwo;
+                return tddkata4.Winner.PlayerTwo;
             }
-            return Player.PlayerOne;
+            return tddkata4.Winner.PlayerOne;
         }
     }
 }
