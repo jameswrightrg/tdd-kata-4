@@ -1,6 +1,6 @@
 namespace tddkata4
 {
-    public class Player
+    public class Player : IPlayer
     {
         private readonly PlayerSelection m_ConstantSelection;
 

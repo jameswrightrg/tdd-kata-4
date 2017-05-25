@@ -39,8 +39,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="EnumerablePlayer.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameWinner.cs" />
+    <Compile Include="IPlayer.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="RoundWinner.cs" />
     <Compile Include="PlayerSelection.cs" />

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -50,5 +49,22 @@ namespace tddkata4.Tests
 
             Assert.That(game.Winner, Is.EqualTo(GameWinner.None));
         }
+
+        [Test]
+        public void PlayerOneWinsAfterTieBreaker()
+        {
+            var playerOne = new EnumerablePlayer(new[] {PlayerSelection.Rock, PlayerSelection.Rock, PlayerSelection.Rock, PlayerSelection.Paper});
+            var playerTwo = new Player(PlayerSelection.Rock);
+
+            var game = new Game(playerOne, playerTwo);
+
+            game.PlayRound();
+            game.PlayRound();
+            game.PlayRound();
+            game.PlayRound();
+
+            Assert.That(game.Winner, Is.EqualTo(GameWinner.PlayerOne));
+        }
+
     }
 }

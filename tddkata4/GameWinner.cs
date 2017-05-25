@@ -3,6 +3,7 @@
     public enum GameWinner
     {
         PlayerOne,
-        None
+        None,
+        PlayerTwo
     }
 }

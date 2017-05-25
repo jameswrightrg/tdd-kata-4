@@ -4,25 +4,50 @@
     {
         private int m_RoundCount = 0;
 
-        private Player m_PlayerOne;
-        private Player m_PlayerTwo;
+        private readonly IPlayer m_PlayerOne;
+        private int m_PlayerOneWins = 0;
 
-        public Game(Player playerOne, Player playerTwo)
+        private readonly IPlayer m_PlayerTwo;
+        private int m_PlayerTwoWins = 0;
+
+        public Game(IPlayer playerOne, IPlayer playerTwo)
         {
             m_PlayerOne = playerOne;
             m_PlayerTwo = playerTwo;
         }
 
-        public Game()
+        public Game() : this(new Player(PlayerSelection.Rock), new Player(PlayerSelection.Scissors))
         {
         }
 
         public void PlayRound()
         {
-            if (m_PlayerOne == null || m_PlayerOne.Reveal() != PlayerSelection.Rock)
-                ++m_RoundCount;
+            ++m_RoundCount;
+            var winner = Round.Winner(m_PlayerOne.Reveal(), m_PlayerTwo.Reveal());
+            switch (winner)
+            {
+                case RoundWinner.PlayerOne:
+                    ++m_PlayerOneWins;
+                    break;
+                case RoundWinner.PlayerTwo:
+                    ++m_PlayerTwoWins;
+                    break;
+            }
         }
 
-        public GameWinner Winner => m_RoundCount >= 3 ? GameWinner.PlayerOne : GameWinner.None;
+        public GameWinner Winner
+        {
+            get
+            {
+                if (m_RoundCount >= 3)
+                {
+                    if (m_PlayerOneWins > m_PlayerTwoWins)
+                    {
+                        return GameWinner.PlayerOne;
+                    }
+                }
+                return GameWinner.None;
+            }
+        }
     }
 }
