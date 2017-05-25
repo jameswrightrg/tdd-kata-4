@@ -3,6 +3,7 @@
     public enum PlayerSelection
     {
         Rock,
-        Scissors
+        Scissors,
+        Paper
     }
 }
