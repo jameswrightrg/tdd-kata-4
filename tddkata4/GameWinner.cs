@@ -1,9 +1,8 @@
 ﻿namespace tddkata4
 {
-    public enum Winner
+    public enum GameWinner
     {
         PlayerOne,
-        PlayerTwo,
-        Draw
+        None
     }
 }

@@ -17,7 +17,18 @@ namespace tddkata4.Tests
             game.PlayRound();
             game.PlayRound();
 
-            Assert.That(game.Winner, Is.EqualTo(Winner.PlayerOne));
+            Assert.That(game.Winner, Is.EqualTo(GameWinner.PlayerOne));
+        }
+        
+        [Test]
+        public void NobodyWinsAfterTwoRounds()
+        {
+            var game = new Game();
+
+            game.PlayRound();
+            game.PlayRound();
+
+            Assert.That(game.Winner, Is.EqualTo(GameWinner.None));
         }
     }
 }

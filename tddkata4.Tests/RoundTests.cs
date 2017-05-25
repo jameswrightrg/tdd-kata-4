@@ -5,15 +5,15 @@ namespace tddkata4.Tests
     [TestFixture]
     public class RoundTests
     {
-        [TestCase(PlayerSelection.Rock, PlayerSelection.Scissors, Winner.PlayerOne)]
-        [TestCase(PlayerSelection.Scissors, PlayerSelection.Paper, Winner.PlayerOne)]
-        [TestCase(PlayerSelection.Paper, PlayerSelection.Rock, Winner.PlayerOne)]
-        [TestCase(PlayerSelection.Scissors, PlayerSelection.Rock, Winner.PlayerTwo)]
-        [TestCase(PlayerSelection.Paper, PlayerSelection.Scissors, Winner.PlayerTwo)]
-        [TestCase(PlayerSelection.Rock, PlayerSelection.Paper, Winner.PlayerTwo)]
-        public void PlayersCanWin(PlayerSelection playerOne, PlayerSelection playerTwo, Winner winner)
+        [TestCase(PlayerSelection.Rock, PlayerSelection.Scissors, RoundWinner.PlayerOne)]
+        [TestCase(PlayerSelection.Scissors, PlayerSelection.Paper, RoundWinner.PlayerOne)]
+        [TestCase(PlayerSelection.Paper, PlayerSelection.Rock, RoundWinner.PlayerOne)]
+        [TestCase(PlayerSelection.Scissors, PlayerSelection.Rock, RoundWinner.PlayerTwo)]
+        [TestCase(PlayerSelection.Paper, PlayerSelection.Scissors, RoundWinner.PlayerTwo)]
+        [TestCase(PlayerSelection.Rock, PlayerSelection.Paper, RoundWinner.PlayerTwo)]
+        public void PlayersCanWin(PlayerSelection playerOne, PlayerSelection playerTwo, RoundWinner roundWinner)
         {
-            Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(winner));
+            Assert.That(Round.Winner(playerOne, playerTwo), Is.EqualTo(roundWinner));
         }
 
         [TestCase(PlayerSelection.Rock)]
@@ -21,7 +21,7 @@ namespace tddkata4.Tests
         [TestCase(PlayerSelection.Paper)]
         public void PlayersCanDraw(PlayerSelection playerSelection)
         {
-            Assert.That(Round.Winner(playerSelection, playerSelection), Is.EqualTo(Winner.Draw));
+            Assert.That(Round.Winner(playerSelection, playerSelection), Is.EqualTo(RoundWinner.Draw));
         }
     }
 }

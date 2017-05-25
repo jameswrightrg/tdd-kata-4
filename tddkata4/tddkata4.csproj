@@ -40,7 +40,8 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Game.cs" />
-    <Compile Include="Winner.cs" />
+    <Compile Include="GameWinner.cs" />
+    <Compile Include="RoundWinner.cs" />
     <Compile Include="PlayerSelection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Round.cs" />
